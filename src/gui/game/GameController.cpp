@@ -1,3 +1,4 @@
+#include "common/SingleThreaded.h"
 #include "GameController.h"
 
 #include "Brush.h"
@@ -1771,7 +1772,7 @@ void GameController::AfterSimDraw()
 
 bool GameController::ThreadedRenderingAllowed()
 {
-	return gameModel->GetThreadedRendering() && !GetPaused() && !commandInterface->HaveSimGraphicsEventHandlers();
+	return !TPT_SINGLE_THREADED && gameModel->GetThreadedRendering() && !GetPaused() && !commandInterface->HaveSimGraphicsEventHandlers();
 }
 
 void GameController::SetToolIndex(ByteString identifier, std::optional<int> index)

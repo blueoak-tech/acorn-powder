@@ -8,6 +8,7 @@
 #include <memory>
 #include <fftw3.h>
 #include <thread>
+#include "common/SingleThreaded.h"
 #include <mutex>
 #include <condition_variable>
 
@@ -74,6 +75,10 @@ GravityImpl::~GravityImpl()
 
 void GravityImpl::Dispatch()
 {
+#if TPT_SINGLE_THREADED
+	Work();
+	return;
+#endif
 	{
 		std::unique_lock lk(stateMx);
 		working = true;
@@ -83,6 +88,9 @@ void GravityImpl::Dispatch()
 
 void GravityImpl::Stop()
 {
+#if TPT_SINGLE_THREADED
+	return;
+#endif
 	{
 		std::unique_lock lk(stateMx);
 		shouldStop = true;
@@ -93,6 +101,9 @@ void GravityImpl::Stop()
 
 void GravityImpl::Wait()
 {
+#if TPT_SINGLE_THREADED
+	return;
+#endif
 	std::unique_lock lk(stateMx);
 	stateCv.wait(lk, [this]() {
 		return !working;
@@ -183,6 +194,9 @@ void GravityImpl::Init()
 	//clear padded gravmap
 	std::fill(massBig.get(), massBig.get() + blocks.X * blocks.Y, 0.f);
 
+#if TPT_SINGLE_THREADED
+	return;
+#endif
 	thr = std::thread([this]() {
 		while (true)
 		{

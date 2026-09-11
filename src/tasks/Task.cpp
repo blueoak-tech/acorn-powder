@@ -1,6 +1,7 @@
 #include "Task.h"
 
 #include "TaskListener.h"
+#include "common/SingleThreaded.h"
 
 void Task::AddTaskListener(TaskListener * listener)
 {
@@ -12,7 +13,11 @@ void Task::AddTaskListener(TaskListener * listener)
 void Task::Start()
 {
 	before();
+#if TPT_SINGLE_THREADED
+	doWork_wrapper();
+#else
 	std::thread([this]() { doWork_wrapper(); }).detach();
+#endif
 }
 
 int Task::GetProgress()

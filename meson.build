@@ -241,7 +241,6 @@ if host_platform == 'emscripten'
 		'-s', 'FS_DEBUG',
 		'-s', 'MODULARIZE',
 		'-s', 'EXPORT_NAME=create_' + app_exe_jssafe,
-		'-Wl,-u,_emscripten_run_callback_on_thread',
 		'-lidbfs.js',
 		'--source-map-base=./',
 	]
@@ -249,10 +248,13 @@ if host_platform == 'emscripten'
 		'-s', 'USE_SDL=2',
 		'-s', 'USE_BZIP2=1',
 		'-s', 'USE_LIBPNG',
-		'-s', 'USE_PTHREADS',
 		'-s', 'DISABLE_EXCEPTION_CATCHING=0',
 		'-gsource-map',
 	]
+	if get_option('emscripten_pthreads')
+		emcc_args += [ '-s', 'USE_PTHREADS' ]
+		project_link_args += [ '-Wl,-u,_emscripten_run_callback_on_thread' ]
+	endif
 	project_link_args += emcc_args
 	project_cpp_args += emcc_args
 else

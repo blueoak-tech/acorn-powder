@@ -37,6 +37,12 @@ option(
 	description: 'Handle the shared data folder, e.g. automatically chdir over to it and offering migration to it'
 )
 option(
+	'emscripten_pthreads',
+	type: 'boolean',
+	value: true,
+	description: 'Emscripten only: build with -pthread (needs SharedArrayBuffer => COOP/COEP). false = single-threaded build embeddable anywhere'
+)
+option(
 	'http',
 	type: 'boolean',
 	value: true,
