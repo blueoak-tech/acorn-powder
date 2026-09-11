@@ -100,3 +100,6 @@ ignore/
 /acorn/powder-web.tar.gz
 /acorn/shell/build/
 /acorn/shell/node_modules/
+
+# upstream ignores *.sh; our web build script must ship
+!/acorn/build-web.sh
