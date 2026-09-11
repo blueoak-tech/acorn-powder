@@ -181,6 +181,8 @@ script.src = 'powder.js';
 script.onload = () => {
   window.create_powder!({ canvas, print: (t: string) => console.log('[tpt]', t), printErr: (t: string) => console.log('[tpt]', t) }).then((m) => {
     module = m;
+    // ?debug exposes the module for measurements from the devtools console (never used by the protocol)
+    if (new URLSearchParams(location.search).has('debug')) (window as unknown as { powder: PowderModule }).powder = m;
   });
 };
 script.onerror = () => {
