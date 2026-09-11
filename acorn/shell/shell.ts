@@ -24,6 +24,11 @@ const ALLOWED_PARENTS = [
   /^https:\/\/([a-z0-9-]+\.)*acorn-ai\.(ir|xyz)$/,
   /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/,
 ];
+// A dev build served over plain http (never the production origin) may also be embedded by a
+// page on the LAN — that is how a phone on the same Wi-Fi tests the touch UI.
+if (location.protocol === 'http:') {
+  ALLOWED_PARENTS.push(/^http:\/\/(10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+)(:\d+)?$/);
+}
 
 const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 const status = document.getElementById('status') as HTMLElement;
