@@ -225,7 +225,11 @@ project_link_args = []
 project_cpp_args = []
 
 fftw_dep = dependency('fftw3f', static: is_static)
-threads_dep = dependency('threads')
+if host_platform == 'emscripten' and not get_option('emscripten_pthreads')
+	threads_dep = [] # meson would inject -pthread at link time and wasm-ld would then demand shared memory
+else
+	threads_dep = dependency('threads')
+endif
 if host_platform == 'emscripten'
 	app_exe_jssafe = app_exe.underscorify()
 	png_dep = []
