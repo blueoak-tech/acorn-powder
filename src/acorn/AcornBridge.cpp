@@ -6,6 +6,7 @@
 #include "gui/game/GameController.h"
 #include "gui/game/IntroText.h"
 #include "lua/CommandInterface.h"
+#include "lua/LuaScriptInterface.h"
 #include <cstdlib>
 #include <cstring>
 #include <emscripten.h>
@@ -64,10 +65,16 @@ EMSCRIPTEN_KEEPALIVE int acorn_run_lua(const char *code)
 		return -1;
 	}
 	auto &ci = CommandInterface::Ref();
+	// The console keeps a syntactically incomplete chunk in lastCode so the next line can
+	// continue it. Over the bridge every call is a complete chunk, so never let one call's
+	// leftover be prepended to the next.
+	auto *lsi = static_cast<LuaScriptInterface *>(&ci);
+	lsi->lastCode = "";
 	auto ret = ci.Command(ByteString(code).FromUtf8());
 	if (ret)
 	{
 		acornLastError = ci.GetLastError().ToUtf8();
+		lsi->lastCode = "";
 		return -1;
 	}
 	return 0;
