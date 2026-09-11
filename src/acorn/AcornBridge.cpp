@@ -4,6 +4,7 @@
 #include "client/SaveFile.h"
 #include "common/String.h"
 #include "gui/game/GameController.h"
+#include "gui/game/GameView.h"
 #include "gui/game/IntroText.h"
 #include "lua/CommandInterface.h"
 #include "lua/LuaScriptInterface.h"
@@ -152,6 +153,16 @@ EMSCRIPTEN_KEEPALIVE int acorn_part_count()
 EMSCRIPTEN_KEEPALIVE int acorn_is_paused()
 {
 	return acornReady ? (GameController::Ref().GetPaused() ? 1 : 0) : -1;
+}
+
+EMSCRIPTEN_KEEPALIVE int acorn_hide_intro()
+{
+	if (!RequireReady())
+	{
+		return -1;
+	}
+	GameController::Ref().GetView()->AcornHideIntro();
+	return 0;
 }
 
 EMSCRIPTEN_KEEPALIVE int acorn_set_paused(int paused)

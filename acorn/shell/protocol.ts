@@ -13,7 +13,7 @@ export interface PowderScenario {
 }
 
 export type ParentToPowder =
-  | { type: 'acorn:init'; v: typeof ACORN_POWDER_PROTOCOL; id: string; scenario?: PowderScenario }
+  | { type: 'acorn:init'; v: typeof ACORN_POWDER_PROTOCOL; id: string; scenario?: PowderScenario; hideIntro?: boolean }
   | { type: 'acorn:run-lua'; id: string; code: string }
   | { type: 'acorn:load-save'; id: string; cps: string }
   | { type: 'acorn:get-save'; id: string }

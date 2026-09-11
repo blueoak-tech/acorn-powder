@@ -76,6 +76,10 @@ private:
 	String buttonTip;
 	bool isButtonTipFadingIn;
 	ui::Fade introText{ ui::Fade::LinearProfile{ 60.f, 60.f }, 0, 2048 };
+public:
+	// Acorn bridge: the host page has its own instructions panel, so it hides the English intro.
+	void AcornHideIntro() { introText = 0; }
+private:
 	String introTextMessage;
 
 	bool doScreenshot;

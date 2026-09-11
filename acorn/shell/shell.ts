@@ -111,6 +111,7 @@ function handle(ev: MessageEvent<ParentToPowder>) {
       case 'acorn:init':
         if (msg.v !== PROTOCOL) return fail(msg.id, `protocol ${msg.v} unsupported (shell speaks ${PROTOCOL})`);
         if (msg.scenario) applyScenario(m, msg.scenario);
+        if (msg.hideIntro) m.ccall('acorn_hide_intro', 'number', [], []);
         return reply(msg.id, { version: m.UTF8ToString(m.ccall('acorn_version', 'number', [], [])) });
       case 'acorn:run-lua':
         runLua(m, msg.code);

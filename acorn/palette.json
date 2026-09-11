@@ -1,0 +1,1766 @@
+{
+ "sections": {
+  "SC_WALL": 0,
+  "SC_ELEC": 1,
+  "SC_POWERED": 2,
+  "SC_SENSOR": 3,
+  "SC_FORCE": 4,
+  "SC_EXPLOSIVE": 5,
+  "SC_GAS": 6,
+  "SC_LIQUID": 7,
+  "SC_POWDERS": 8,
+  "SC_SOLIDS": 9,
+  "SC_NUCLEAR": 10,
+  "SC_SPECIAL": 11,
+  "SC_LIFE": 12,
+  "SC_TOOL": 13,
+  "SC_FAVORITES": 14,
+  "SC_DECO": 15
+ },
+ "elements": [
+  {
+   "id": "DEFAULT_PT_ACEL",
+   "name": "ACEL",
+   "colour": "#0099cc",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Accelerator, speeds up nearby elements."
+  },
+  {
+   "id": "DEFAULT_PT_ACID",
+   "name": "ACID",
+   "colour": "#ed55ff",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Dissolves almost everything."
+  },
+  {
+   "id": "DEFAULT_PT_AMTR",
+   "name": "AMTR",
+   "colour": "#808080",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Anti-Matter, destroys a majority of particles."
+  },
+  {
+   "id": "DEFAULT_PT_ANAR",
+   "name": "ANAR",
+   "colour": "#ffffee",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Anti-air. Very light gravity-defying dust. Burns cold instead of hot."
+  },
+  {
+   "id": "DEFAULT_PT_ARAY",
+   "name": "ARAY",
+   "colour": "#ffbb00",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Ray Emitter. Rays create points when they collide."
+  },
+  {
+   "id": "DEFAULT_PT_BANG",
+   "name": "TNT",
+   "colour": "#c05050",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "TNT, explodes all at once."
+  },
+  {
+   "id": "DEFAULT_PT_BASE",
+   "name": "BASE",
+   "colour": "#90d5ff",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Corrosive liquid. Rusts conductive solids, neutralizes acid."
+  },
+  {
+   "id": "DEFAULT_PT_BCLN",
+   "name": "BCLN",
+   "colour": "#ffd040",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Breakable Clone."
+  },
+  {
+   "id": "DEFAULT_PT_BCOL",
+   "name": "BCOL",
+   "colour": "#333333",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Broken Coal. Heavy particles, burns slowly."
+  },
+  {
+   "id": "DEFAULT_PT_BGLA",
+   "name": "BGLA",
+   "colour": "#606060",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Broken Glass, heavy particles formed when glass breaks under pressure. Meltable. Bagels."
+  },
+  {
+   "id": "DEFAULT_PT_BHOL",
+   "name": "VACU",
+   "colour": "#303030",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Vacuum, sucks in other particles and heats up."
+  },
+  {
+   "id": "DEFAULT_PT_BIZR",
+   "name": "BIZR",
+   "colour": "#00ff77",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Bizarre... contradicts the normal state changes. Paints other elements with its deco color."
+  },
+  {
+   "id": "DEFAULT_PT_BIZRG",
+   "name": "BIZG",
+   "colour": "#00ffbb",
+   "section": "SC_GAS",
+   "visible": false,
+   "desc": "Bizarre gas."
+  },
+  {
+   "id": "DEFAULT_PT_BIZRS",
+   "name": "BIZS",
+   "colour": "#00e455",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "Bizarre solid."
+  },
+  {
+   "id": "DEFAULT_PT_BMTL",
+   "name": "BMTL",
+   "colour": "#505070",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Breakable metal. Common conductive building material, can melt and break under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_BOMB",
+   "name": "BOMB",
+   "colour": "#fff288",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Bomb. Explodes and destroys all surrounding particles when it touches something."
+  },
+  {
+   "id": "DEFAULT_PT_BOYL",
+   "name": "BOYL",
+   "colour": "#0a3200",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Boyle, variable pressure gas. Expands when heated."
+  },
+  {
+   "id": "DEFAULT_PT_BRAY",
+   "name": "BRAY",
+   "colour": "#ffffff",
+   "section": "SC_ELEC",
+   "visible": false,
+   "desc": "Ray Point. Rays create points when they collide."
+  },
+  {
+   "id": "DEFAULT_PT_BRCK",
+   "name": "BRCK",
+   "colour": "#808080",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Brick, breakable building material."
+  },
+  {
+   "id": "DEFAULT_PT_BREC",
+   "name": "BREL",
+   "colour": "#707060",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Broken electronics. Formed from EMP blasts, and when constantly sparked while under pressure, turns to EXOT."
+  },
+  {
+   "id": "DEFAULT_PT_BRMT",
+   "name": "BRMT",
+   "colour": "#705060",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Broken metal. Created when iron rusts or when metals break from pressure."
+  },
+  {
+   "id": "DEFAULT_PT_BTRY",
+   "name": "BTRY",
+   "colour": "#858505",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Battery. Generates infinite electricity."
+  },
+  {
+   "id": "DEFAULT_PT_BVBR",
+   "name": "BVBR",
+   "colour": "#005000",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Broken vibranium."
+  },
+  {
+   "id": "DEFAULT_PT_C5",
+   "name": "C-5",
+   "colour": "#2050e0",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Cold explosive, set off by anything cold."
+  },
+  {
+   "id": "DEFAULT_PT_CAUS",
+   "name": "CAUS",
+   "colour": "#80ffa0",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Caustic Gas, acts like ACID."
+  },
+  {
+   "id": "DEFAULT_PT_CBNW",
+   "name": "BUBW",
+   "colour": "#2030d0",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Carbonated water. Slowly releases CO2."
+  },
+  {
+   "id": "DEFAULT_PT_HFLM",
+   "name": "CFLM",
+   "colour": "#8080ff",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Sub-zero flame."
+  },
+  {
+   "id": "DEFAULT_PT_CLNE",
+   "name": "CLNE",
+   "colour": "#ffd010",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Clone. Duplicates any particles it touches."
+  },
+  {
+   "id": "DEFAULT_PT_CLST",
+   "name": "CLST",
+   "colour": "#e4a4a4",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Clay dust. Produces paste when mixed with water."
+  },
+  {
+   "id": "DEFAULT_PT_CNCT",
+   "name": "CNCT",
+   "colour": "#c0c0c0",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Concrete. Can stack on itself or ROCK, collapses with pressure."
+  },
+  {
+   "id": "DEFAULT_PT_CO2",
+   "name": "CO2",
+   "colour": "#666666",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Carbon Dioxide. Heavy gas, drifts downwards. Carbonates water and turns to dry ice when cold."
+  },
+  {
+   "id": "DEFAULT_PT_COAL",
+   "name": "COAL",
+   "colour": "#222222",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Coal, Burns very slowly. Gets red when hot."
+  },
+  {
+   "id": "DEFAULT_PT_CONV",
+   "name": "CONV",
+   "colour": "#0aab0a",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Converter. Converts everything into whatever it first touches."
+  },
+  {
+   "id": "DEFAULT_PT_CRAY",
+   "name": "CRAY",
+   "colour": "#bbff00",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Particle Ray Emitter. Creates a beam of particles set by its ctype, with a range set by tmp."
+  },
+  {
+   "id": "DEFAULT_PT_CRMC",
+   "name": "CRMC",
+   "colour": "#d6d1d4",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Ceramic. Gets stronger under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_DCEL",
+   "name": "DCEL",
+   "colour": "#99cc00",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Decelerator, slows down nearby elements."
+  },
+  {
+   "id": "DEFAULT_PT_DESL",
+   "name": "DESL",
+   "colour": "#440000",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Liquid diesel. Explodes under high pressure and temperatures."
+  },
+  {
+   "id": "DEFAULT_PT_DEST",
+   "name": "DEST",
+   "colour": "#ff3311",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "More destructive Bomb, can break through virtually anything."
+  },
+  {
+   "id": "DEFAULT_PT_DEUT",
+   "name": "DEUT",
+   "colour": "#00153f",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Deuterium oxide. Gets more concentrated when cold, explodes with neutrons or protons."
+  },
+  {
+   "id": "DEFAULT_PT_DLAY",
+   "name": "DLAY",
+   "colour": "#753590",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Conducts with temperature-dependent delay. (use HEAT/COOL)."
+  },
+  {
+   "id": "DEFAULT_PT_DMG",
+   "name": "DMG",
+   "colour": "#88ff88",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Generates damaging pressure and breaks any elements it hits."
+  },
+  {
+   "id": "DEFAULT_PT_DMND",
+   "name": "DMND",
+   "colour": "#ccffff",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Diamond. Indestructible."
+  },
+  {
+   "id": "DEFAULT_PT_DRAY",
+   "name": "DRAY",
+   "colour": "#ffaa22",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Duplicator ray. Replicates a line of particles in front of it."
+  },
+  {
+   "id": "DEFAULT_PT_DRIC",
+   "name": "DRIC",
+   "colour": "#e0e0e0",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Dry Ice, formed when CO2 is cooled."
+  },
+  {
+   "id": "DEFAULT_PT_DSTW",
+   "name": "DSTW",
+   "colour": "#1020c0",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Distilled water, does not conduct electricity."
+  },
+  {
+   "id": "DEFAULT_PT_DTEC",
+   "name": "DTEC",
+   "colour": "#fd9d18",
+   "section": "SC_SENSOR",
+   "visible": true,
+   "desc": "Detector, creates a spark when something with its ctype is nearby."
+  },
+  {
+   "id": "DEFAULT_PT_DUST",
+   "name": "DUST",
+   "colour": "#ffe0a0",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Very light dust. Flammable."
+  },
+  {
+   "id": "DEFAULT_PT_DYST",
+   "name": "DYST",
+   "colour": "#bbb0a0",
+   "section": "SC_POWDERS",
+   "visible": false,
+   "desc": "Dead Yeast."
+  },
+  {
+   "id": "DEFAULT_PT_116",
+   "name": "EQVE",
+   "colour": "#ffe0a0",
+   "section": "SC_SPECIAL",
+   "visible": false,
+   "desc": "A failed shared velocity test."
+  },
+  {
+   "id": "DEFAULT_PT_ELEC",
+   "name": "ELEC",
+   "colour": "#dfefff",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Electrons. Sparks electronics, reacts with NEUT and WATR."
+  },
+  {
+   "id": "DEFAULT_PT_EMBR",
+   "name": "EMBR",
+   "colour": "#fff288",
+   "section": "SC_EXPLOSIVE",
+   "visible": false,
+   "desc": "Sparks. Formed by explosions."
+  },
+  {
+   "id": "DEFAULT_PT_EMP",
+   "name": "EMP",
+   "colour": "#66aaff",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Electromagnetic pulse. Breaks activated electronics."
+  },
+  {
+   "id": "DEFAULT_PT_ETRD",
+   "name": "ETRD",
+   "colour": "#404040",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Electrode. Creates plasma arcs with electricity. (Use sparingly)"
+  },
+  {
+   "id": "DEFAULT_PT_EXOT",
+   "name": "EXOT",
+   "colour": "#247bfe",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Exotic matter. Explodes with excess exposure to electrons. Has many other odd reactions."
+  },
+  {
+   "id": "DEFAULT_PT_FIGH",
+   "name": "FIGH",
+   "colour": "#ffe0a0",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Fighter. Tries to kill stickmen. You must first give it an element to kill him with."
+  },
+  {
+   "id": "DEFAULT_PT_FILT",
+   "name": "FILT",
+   "colour": "#000056",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Filter. Changes color of PHOT and BIZR. Color depends on temperature."
+  },
+  {
+   "id": "DEFAULT_PT_FIRE",
+   "name": "FIRE",
+   "colour": "#ff1000",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Ignites flammable materials. Heats air."
+  },
+  {
+   "id": "DEFAULT_PT_FIRW",
+   "name": "FIRW",
+   "colour": "#ffa040",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Fireworks! Colorful, set off by fire."
+  },
+  {
+   "id": "DEFAULT_PT_FOG",
+   "name": "FOG",
+   "colour": "#aaaaaa",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Fog, created when an electric current is passed through RIME."
+  },
+  {
+   "id": "DEFAULT_PT_FRAY",
+   "name": "FRAY",
+   "colour": "#00bbff",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Force Emitter. Pushes or pulls objects based on its temperature. Use like ARAY."
+  },
+  {
+   "id": "DEFAULT_PT_FRME",
+   "name": "FRME",
+   "colour": "#999988",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Frame, can be used with pistons to push many particles."
+  },
+  {
+   "id": "DEFAULT_PT_FRZW",
+   "name": "FRZW",
+   "colour": "#1020c0",
+   "section": "SC_LIQUID",
+   "visible": false,
+   "desc": "Freeze water. Hybrid liquid formed when Freeze powder melts."
+  },
+  {
+   "id": "DEFAULT_PT_FRZZ",
+   "name": "FRZZ",
+   "colour": "#c0e0ff",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Freeze powder. When melted, forms ice that always cools. Spreads with regular water."
+  },
+  {
+   "id": "DEFAULT_PT_FSEP",
+   "name": "FSEP",
+   "colour": "#63ad5f",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Fuse Powder. Burns slowly like FUSE."
+  },
+  {
+   "id": "DEFAULT_PT_FUSE",
+   "name": "FUSE",
+   "colour": "#0a5706",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Burns slowly. Ignites at very high temperatures or when sparked."
+  },
+  {
+   "id": "DEFAULT_PT_FWRK",
+   "name": "FWRK",
+   "colour": "#666666",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Original version of fireworks, activated by heat/neutrons."
+  },
+  {
+   "id": "DEFAULT_PT_GAS",
+   "name": "GAS",
+   "colour": "#e0ff20",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Diffuses quickly and is flammable. Liquefies into OIL under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_GBMB",
+   "name": "GBMB",
+   "colour": "#1144bb",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Gravity bomb. Sticks to the first object it touches then produces a strong gravity push."
+  },
+  {
+   "id": "DEFAULT_PT_GEL",
+   "name": "GEL",
+   "colour": "#ff9900",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "A liquid with variable viscosity and heat conductivity. Absorbs water."
+  },
+  {
+   "id": "DEFAULT_PT_GLAS",
+   "name": "GLAS",
+   "colour": "#404040",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Glass. Meltable. Shatters under pressure, and refracts photons."
+  },
+  {
+   "id": "DEFAULT_PT_GLOW",
+   "name": "GLOW",
+   "colour": "#445464",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Glow, Glows under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_GOLD",
+   "name": "GOLD",
+   "colour": "#dcad2c",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Corrosion resistant metal, will reverse corrosion of iron. Excellent conductor."
+  },
+  {
+   "id": "DEFAULT_PT_GOO",
+   "name": "GOO",
+   "colour": "#804000",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Deforms and disappears under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_GPMP",
+   "name": "GPMP",
+   "colour": "#0a3b3b",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Gravity pump. Changes gravity to its temp when activated. (use HEAT/COOL)"
+  },
+  {
+   "id": "DEFAULT_PT_GRAV",
+   "name": "GRAV",
+   "colour": "#202020",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Very light dust. Changes colour based on velocity."
+  },
+  {
+   "id": "DEFAULT_PT_GRVT",
+   "name": "GRVT",
+   "colour": "#00ee76",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Gravitons. Create Newtonian Gravity."
+  },
+  {
+   "id": "DEFAULT_PT_GUNP",
+   "name": "GUN",
+   "colour": "#c0c0d0",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Gunpowder. Light dust, explodes on contact with fire or spark."
+  },
+  {
+   "id": "DEFAULT_PT_H2",
+   "name": "HYGN",
+   "colour": "#5070ff",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Hydrogen. Combusts with OXYG to make WATR. Undergoes fusion at high temperature and pressure."
+  },
+  {
+   "id": "DEFAULT_PT_HEAC",
+   "name": "HEAC",
+   "colour": "#cb6351",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Rapid heat conductor."
+  },
+  {
+   "id": "DEFAULT_PT_HSWC",
+   "name": "HSWC",
+   "colour": "#3b0a0a",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Heat switch. Conducts heat only when activated."
+  },
+  {
+   "id": "DEFAULT_PT_ICEI",
+   "name": "ICE",
+   "colour": "#a0c0ff",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Crushes under pressure. Cools down air."
+  },
+  {
+   "id": "DEFAULT_PT_IGNT",
+   "name": "IGNC",
+   "colour": "#c0b050",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Ignition cord. Burns slowly with fire and sparks."
+  },
+  {
+   "id": "DEFAULT_PT_INSL",
+   "name": "INSL",
+   "colour": "#9ea3b6",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Insulator. Blocks heat, electricity, and radiation."
+  },
+  {
+   "id": "DEFAULT_PT_INST",
+   "name": "INST",
+   "colour": "#404039",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Instantly conducts, PSCN to charge, NSCN to take."
+  },
+  {
+   "id": "DEFAULT_PT_INVIS",
+   "name": "INVS",
+   "colour": "#00cccc",
+   "section": "SC_SENSOR",
+   "visible": true,
+   "desc": "Invisible under pressure, allowing particles through."
+  },
+  {
+   "id": "DEFAULT_PT_INWR",
+   "name": "INWR",
+   "colour": "#544141",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Insulated wire. Only conducts to PSCN, NSCN, WIFI, and SWCH."
+  },
+  {
+   "id": "DEFAULT_PT_IRON",
+   "name": "IRON",
+   "colour": "#707070",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Rusts with salt, can be used for electrolysis of WATR."
+  },
+  {
+   "id": "DEFAULT_PT_ISOZ",
+   "name": "ISOZ",
+   "colour": "#aa30d0",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Isotope-Z. Radioactive liquid, decays into photons when touching PHOT or under negative pressure."
+  },
+  {
+   "id": "DEFAULT_PT_ISZS",
+   "name": "ISZS",
+   "colour": "#662089",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Solid form of ISOZ, slowly decays into PHOT."
+  },
+  {
+   "id": "DEFAULT_PT_LAVA",
+   "name": "LAVA",
+   "colour": "#e05010",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Molten lava. Ignites flammable materials. Generated when metals and other materials melt, solidifies when cold."
+  },
+  {
+   "id": "DEFAULT_PT_LCRY",
+   "name": "LCRY",
+   "colour": "#505050",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Liquid Crystal. Changes colour when charged. (PSCN Charges, NSCN Discharges)"
+  },
+  {
+   "id": "DEFAULT_PT_LDTC",
+   "name": "LDTC",
+   "colour": "#66ff66",
+   "section": "SC_SENSOR",
+   "visible": true,
+   "desc": "Linear detector. Scans in 8 directions for particles with its ctype and creates a spark on the opposite side."
+  },
+  {
+   "id": "DEFAULT_PT_LIFE",
+   "name": "LIFE",
+   "colour": "#0cac00",
+   "section": "SC_LIFE",
+   "visible": false,
+   "desc": "Game Of Life! B3/S23"
+  },
+  {
+   "id": "DEFAULT_PT_LIGH",
+   "name": "LIGH",
+   "colour": "#ffffc0",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Lightning. Change the brush size to set the size of the lightning."
+  },
+  {
+   "id": "DEFAULT_PT_LITH",
+   "name": "LITH",
+   "colour": "#b6aabf",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Lithium. Reactive element that explodes on contact with water."
+  },
+  {
+   "id": "DEFAULT_PT_LNTG",
+   "name": "LN2",
+   "colour": "#80a0df",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Liquid Nitrogen. Very cold, disappears whenever it touches anything warmer."
+  },
+  {
+   "id": "DEFAULT_PT_LO2",
+   "name": "LOXY",
+   "colour": "#80a0ef",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Liquid Oxygen. Very cold. Reacts with fire."
+  },
+  {
+   "id": "DEFAULT_PT_LOLZ",
+   "name": "LOLZ",
+   "colour": "#569212",
+   "section": "SC_SPECIAL",
+   "visible": false,
+   "desc": "Lolz"
+  },
+  {
+   "id": "DEFAULT_PT_LOVE",
+   "name": "LOVE",
+   "colour": "#ff30ff",
+   "section": "SC_SPECIAL",
+   "visible": false,
+   "desc": "Love..."
+  },
+  {
+   "id": "DEFAULT_PT_LRBD",
+   "name": "LRBD",
+   "colour": "#aaaaaa",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Liquid Rubidium."
+  },
+  {
+   "id": "DEFAULT_PT_LSNS",
+   "name": "LSNS",
+   "colour": "#336699",
+   "section": "SC_SENSOR",
+   "visible": true,
+   "desc": "Life sensor, creates a spark when there's a nearby particle with a life higher than its temperature."
+  },
+  {
+   "id": "DEFAULT_PT_MERC",
+   "name": "MERC",
+   "colour": "#736b6d",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Mercury. Volume changes with temperature, Conductive."
+  },
+  {
+   "id": "DEFAULT_PT_METL",
+   "name": "METL",
+   "colour": "#404060",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Metal, the basic conductor. Meltable."
+  },
+  {
+   "id": "DEFAULT_PT_MORT",
+   "name": "MORT",
+   "colour": "#e0e0e0",
+   "section": "SC_SPECIAL",
+   "visible": false,
+   "desc": "Steam Train."
+  },
+  {
+   "id": "DEFAULT_PT_MWAX",
+   "name": "MWAX",
+   "colour": "#e0e0aa",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Liquid Wax. Hardens into WAX at 45 degrees."
+  },
+  {
+   "id": "DEFAULT_PT_NBHL",
+   "name": "BHOL",
+   "colour": "#202020",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Black hole, sucks in particles using gravity. (Requires Newtonian gravity)"
+  },
+  {
+   "id": "DEFAULT_PT_NBLE",
+   "name": "NBLE",
+   "colour": "#eb4917",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Noble Gas. Ionizes into plasma when sparked. Diffuses."
+  },
+  {
+   "id": "DEFAULT_PT_NEUT",
+   "name": "NEUT",
+   "colour": "#20e0ff",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Neutrons. Interact with matter in odd ways."
+  },
+  {
+   "id": "DEFAULT_PT_NICE",
+   "name": "NICE",
+   "colour": "#c0e0ff",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Nitrogen Ice. Very cold, will melt into LN2 when heated only slightly."
+  },
+  {
+   "id": "DEFAULT_PT_NITR",
+   "name": "NITR",
+   "colour": "#20e010",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Nitroglycerin. Pressure sensitive explosive. Mix with CLST to make TNT."
+  },
+  {
+   "id": "DEFAULT_PT_NONE",
+   "name": "NONE",
+   "colour": "#000000",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Erases particles."
+  },
+  {
+   "id": "DEFAULT_PT_NSCN",
+   "name": "NSCN",
+   "colour": "#505080",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "N-Type Silicon, Will not transfer current to P-Type Silicon. Disables powered materials."
+  },
+  {
+   "id": "DEFAULT_PT_NTCT",
+   "name": "NTCT",
+   "colour": "#505040",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "NTC Thermistor. Conducts with PSCN and NSCN, but only when heated above 100C."
+  },
+  {
+   "id": "DEFAULT_PT_NWHL",
+   "name": "WHOL",
+   "colour": "#ffffff",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "White hole, pushes away other particles with gravity. (Requires Newtonian gravity)"
+  },
+  {
+   "id": "DEFAULT_PT_O2",
+   "name": "OXYG",
+   "colour": "#80a0ff",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Oxygen gas. Ignites easily."
+  },
+  {
+   "id": "DEFAULT_PT_OIL",
+   "name": "OIL",
+   "colour": "#404010",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Flammable, turns into GAS at low pressure or high temperature."
+  },
+  {
+   "id": "DEFAULT_PT_PBCN",
+   "name": "PBCN",
+   "colour": "#3b1d0a",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Powered breakable clone."
+  },
+  {
+   "id": "DEFAULT_PT_PCLN",
+   "name": "PCLN",
+   "colour": "#3b3b0a",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Powered clone. When activated, duplicates any particles it touches."
+  },
+  {
+   "id": "DEFAULT_PT_PHOT",
+   "name": "PHOT",
+   "colour": "#ffffff",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Photons. Refract through glass, and different elements change its color. Can ignite flammable materials."
+  },
+  {
+   "id": "DEFAULT_PT_PIPE",
+   "name": "PIPE",
+   "colour": "#444444",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "PIPE, moves particles around. Once the BRCK generates, erase some for the exit. Then the PIPE generates and is usable."
+  },
+  {
+   "id": "DEFAULT_PT_PLEX",
+   "name": "C-4",
+   "colour": "#d080e0",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Solid pressure sensitive explosive."
+  },
+  {
+   "id": "DEFAULT_PT_PLNT",
+   "name": "PLNT",
+   "colour": "#0cac00",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Plant, drinks water and grows."
+  },
+  {
+   "id": "DEFAULT_PT_PLSM",
+   "name": "PLSM",
+   "colour": "#bb99ff",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Plasma, extremely hot."
+  },
+  {
+   "id": "DEFAULT_PT_PLUT",
+   "name": "PLUT",
+   "colour": "#407020",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Plutonium. Heavy, fissile particles. Generates neutrons under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_POLO",
+   "name": "POLO",
+   "colour": "#506030",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Polonium, highly radioactive. Decays into NEUT and heats up."
+  },
+  {
+   "id": "DEFAULT_PT_PPIP",
+   "name": "PPIP",
+   "colour": "#444466",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Powered version of PIPE, use PSCN/NSCN to Activate/Deactivate."
+  },
+  {
+   "id": "DEFAULT_PT_PQRT",
+   "name": "PQRT",
+   "colour": "#88bbbb",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Powdered quartz, broken form of QRTZ."
+  },
+  {
+   "id": "DEFAULT_PT_PROT",
+   "name": "PROT",
+   "colour": "#990000",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Protons. Transfer heat to materials, and remove sparks."
+  },
+  {
+   "id": "DEFAULT_PT_PRTI",
+   "name": "PRTI",
+   "colour": "#eb5917",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Portal IN. Particles go in here. Also has temperature dependent channels. (same as WIFI)"
+  },
+  {
+   "id": "DEFAULT_PT_PRTO",
+   "name": "PRTO",
+   "colour": "#0020eb",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Portal OUT. Particles come out here. Also has temperature dependent channels. (same as WIFI)"
+  },
+  {
+   "id": "DEFAULT_PT_PSCN",
+   "name": "PSCN",
+   "colour": "#805050",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "P-Type Silicon, Will transfer current to any conductor. Enables powered materials."
+  },
+  {
+   "id": "DEFAULT_PT_PSNS",
+   "name": "PSNS",
+   "colour": "#db2020",
+   "section": "SC_SENSOR",
+   "visible": true,
+   "desc": "Pressure sensor, creates a spark when the pressure is greater than its temperature."
+  },
+  {
+   "id": "DEFAULT_PT_PSTE",
+   "name": "PSTE",
+   "colour": "#aa99aa",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Colloid, Hardens under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_PSTN",
+   "name": "PSTN",
+   "colour": "#aa9999",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Piston, pushes particles. PSCN extends, NSCN retracts"
+  },
+  {
+   "id": "DEFAULT_PT_PSTS",
+   "name": "PSTS",
+   "colour": "#776677",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "Solid form of PSTE."
+  },
+  {
+   "id": "DEFAULT_PT_PTCT",
+   "name": "PTCT",
+   "colour": "#405050",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "PTC Thermistor. Conducts with PSCN and NSCN, but only when cooled below 100C."
+  },
+  {
+   "id": "DEFAULT_PT_PTNM",
+   "name": "PTNM",
+   "colour": "#d5e0eb",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Platinum. Catalyzes certain reactions."
+  },
+  {
+   "id": "DEFAULT_PT_PUMP",
+   "name": "PUMP",
+   "colour": "#0a0a3b",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Pressure pump. Changes pressure to its temp when activated. (use HEAT/COOL)."
+  },
+  {
+   "id": "DEFAULT_PT_PVOD",
+   "name": "PVOD",
+   "colour": "#792020",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Powered VOID. When activated, destroys entering particles."
+  },
+  {
+   "id": "DEFAULT_PT_QRTZ",
+   "name": "QRTZ",
+   "colour": "#aadddd",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Quartz, breakable mineral. Conducts but becomes brittle when cold. Scatters photons."
+  },
+  {
+   "id": "DEFAULT_PT_RBDM",
+   "name": "RBDM",
+   "colour": "#cccccc",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Rubidium. Explosive, especially on contact with water. Low melting point."
+  },
+  {
+   "id": "DEFAULT_PT_RFGL",
+   "name": "RFGL",
+   "colour": "#84c2cf",
+   "section": "SC_LIQUID",
+   "visible": false,
+   "desc": "Liquid refrigerant."
+  },
+  {
+   "id": "DEFAULT_PT_RFRG",
+   "name": "RFRG",
+   "colour": "#72d2d4",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Refrigerant. Heats up and liquefies under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_RIME",
+   "name": "RIME",
+   "colour": "#cccccc",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Solid, created when steam cools rapidly and goes through deposition, skipping the liquid phase."
+  },
+  {
+   "id": "DEFAULT_PT_ROCK",
+   "name": "ROCK",
+   "colour": "#727272",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Solid, melts into various elements."
+  },
+  {
+   "id": "DEFAULT_PT_RPEL",
+   "name": "RPEL",
+   "colour": "#99cc00",
+   "section": "SC_FORCE",
+   "visible": true,
+   "desc": "Repels or attracts particles based on its temperature."
+  },
+  {
+   "id": "DEFAULT_PT_RSSS",
+   "name": "RSSS",
+   "colour": "#c43626",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Solidified resist. Blocks pressure and insulates electricity. Liquefies on contact with neutrons."
+  },
+  {
+   "id": "DEFAULT_PT_RSST",
+   "name": "RSST",
+   "colour": "#f95b49",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Resist. Solidifies on contact with photons, is destroyed by electrons and spark."
+  },
+  {
+   "id": "DEFAULT_PT_SALT",
+   "name": "SALT",
+   "colour": "#ffffff",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Salt, dissolves in water."
+  },
+  {
+   "id": "DEFAULT_PT_SAND",
+   "name": "SAND",
+   "colour": "#ffd090",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Sand, Heavy particles. Melts into glass."
+  },
+  {
+   "id": "DEFAULT_PT_SAWD",
+   "name": "SAWD",
+   "colour": "#f0f0a0",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Sawdust. Floats on water."
+  },
+  {
+   "id": "DEFAULT_PT_SEED",
+   "name": "SEED",
+   "colour": "#88e788",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Seeds. Put on sand and add water to grow a tree."
+  },
+  {
+   "id": "DEFAULT_PT_SHLD1",
+   "name": "SHLD",
+   "colour": "#aaaaaa",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Shield. Grows around spark, broken by pressure."
+  },
+  {
+   "id": "DEFAULT_PT_SHLD2",
+   "name": "SHD2",
+   "colour": "#777777",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "Shield lvl 2."
+  },
+  {
+   "id": "DEFAULT_PT_SHLD3",
+   "name": "SHD3",
+   "colour": "#444444",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "Shield lvl 3."
+  },
+  {
+   "id": "DEFAULT_PT_SHLD4",
+   "name": "SHD4",
+   "colour": "#212121",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "Shield lvl 4."
+  },
+  {
+   "id": "DEFAULT_PT_SING",
+   "name": "SING",
+   "colour": "#242424",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Singularity. Creates huge amounts of negative pressure and destroys everything."
+  },
+  {
+   "id": "DEFAULT_PT_SLCN",
+   "name": "SLCN",
+   "colour": "#bccddf",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Powdered Silicon. A key ingredient in producing multiple materials."
+  },
+  {
+   "id": "DEFAULT_PT_SLTW",
+   "name": "SLTW",
+   "colour": "#4050f0",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Saltwater, conducts electricity, difficult to freeze."
+  },
+  {
+   "id": "DEFAULT_PT_SMKE",
+   "name": "SMKE",
+   "colour": "#222222",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Smoke, created by fire."
+  },
+  {
+   "id": "DEFAULT_PT_SNOW",
+   "name": "SNOW",
+   "colour": "#c0e0ff",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Light particles. Created when ICE breaks under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_SOAP",
+   "name": "SOAP",
+   "colour": "#f5f5dc",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Soap. Creates bubbles, washes off deco color, and cures virus."
+  },
+  {
+   "id": "DEFAULT_PT_SPAWN",
+   "name": "SPWN",
+   "colour": "#aaaaaa",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "STKM spawn point."
+  },
+  {
+   "id": "DEFAULT_PT_SPAWN2",
+   "name": "SPWN2",
+   "colour": "#aaaaaa",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "STK2 spawn point."
+  },
+  {
+   "id": "DEFAULT_PT_SPNG",
+   "name": "SPNG",
+   "colour": "#ffbe30",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Sponge, absorbs water. Is not a moving solid."
+  },
+  {
+   "id": "DEFAULT_PT_SPRK",
+   "name": "SPRK",
+   "colour": "#ffff80",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Electricity. The basis of all electronics in TPT, travels along conductive elements."
+  },
+  {
+   "id": "DEFAULT_PT_STKM",
+   "name": "STKM",
+   "colour": "#ffe0a0",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Stickman. Don't kill him! Control with the arrow keys."
+  },
+  {
+   "id": "DEFAULT_PT_STKM2",
+   "name": "STK2",
+   "colour": "#6464ff",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Second stickman. Don't kill him! Control with wasd."
+  },
+  {
+   "id": "DEFAULT_PT_STNE",
+   "name": "STNE",
+   "colour": "#a0a0a0",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Stone. Heavy particles, meltable."
+  },
+  {
+   "id": "DEFAULT_PT_STOR",
+   "name": "STOR",
+   "colour": "#50dfdf",
+   "section": "SC_POWERED",
+   "visible": true,
+   "desc": "Storage. Captures and stores a single particle. Releases when charged with PSCN, also passes to PIPE."
+  },
+  {
+   "id": "DEFAULT_PT_SWCH",
+   "name": "SWCH",
+   "colour": "#103b11",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Switch. Only conducts when switched on. (PSCN switches on, NSCN switches off)"
+  },
+  {
+   "id": "DEFAULT_PT_TESC",
+   "name": "TESC",
+   "colour": "#707040",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Tesla coil! Creates lightning when sparked."
+  },
+  {
+   "id": "DEFAULT_PT_THDR",
+   "name": "THDR",
+   "colour": "#ffffa0",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Lightning! Very hot, inflicts damage upon most materials, and transfers current to metals."
+  },
+  {
+   "id": "DEFAULT_PT_THRM",
+   "name": "THRM",
+   "colour": "#a08090",
+   "section": "SC_EXPLOSIVE",
+   "visible": true,
+   "desc": "Thermite. Burns into extremely hot molten metal."
+  },
+  {
+   "id": "DEFAULT_PT_TRON",
+   "name": "TRON",
+   "colour": "#a9ff00",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Smart particles, Travels in straight lines and avoids obstacles. Grows with time."
+  },
+  {
+   "id": "DEFAULT_PT_TSNS",
+   "name": "TSNS",
+   "colour": "#fd00d5",
+   "section": "SC_SENSOR",
+   "visible": true,
+   "desc": "Temperature sensor, creates a spark when there's a nearby particle with a greater temperature."
+  },
+  {
+   "id": "DEFAULT_PT_TTAN",
+   "name": "TTAN",
+   "colour": "#909090",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Titanium. Higher melting temperature than most other metals, blocks all air pressure."
+  },
+  {
+   "id": "DEFAULT_PT_TUNG",
+   "name": "TUNG",
+   "colour": "#505050",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Tungsten. Brittle metal with a very high melting point."
+  },
+  {
+   "id": "DEFAULT_PT_URAN",
+   "name": "URAN",
+   "colour": "#707020",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Uranium. Heavy particles. Generates heat under pressure."
+  },
+  {
+   "id": "DEFAULT_PT_VIBR",
+   "name": "VIBR",
+   "colour": "#005000",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Vibranium. Stores energy and releases it in violent explosions."
+  },
+  {
+   "id": "DEFAULT_PT_VINE",
+   "name": "VINE",
+   "colour": "#079a00",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Vine, can grow along WOOD."
+  },
+  {
+   "id": "DEFAULT_PT_VIRS",
+   "name": "VIRS",
+   "colour": "#fe11f6",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Virus. Turns everything it touches into virus."
+  },
+  {
+   "id": "DEFAULT_PT_VOID",
+   "name": "VOID",
+   "colour": "#790b0b",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Hole, will drain away any particles."
+  },
+  {
+   "id": "DEFAULT_PT_VRSG",
+   "name": "VRSG",
+   "colour": "#fe68fe",
+   "section": "SC_GAS",
+   "visible": false,
+   "desc": "Gas Virus. Turns everything it touches into virus."
+  },
+  {
+   "id": "DEFAULT_PT_VRSS",
+   "name": "VRSS",
+   "colour": "#d408cd",
+   "section": "SC_SOLIDS",
+   "visible": false,
+   "desc": "Solid Virus. Turns everything it touches into virus."
+  },
+  {
+   "id": "DEFAULT_PT_VSNS",
+   "name": "VSNS",
+   "colour": "#7c9c00",
+   "section": "SC_SENSOR",
+   "visible": true,
+   "desc": "Velocity sensor, creates a spark when there's a nearby particle with velocity higher than its temperature."
+  },
+  {
+   "id": "DEFAULT_PT_WARP",
+   "name": "WARP",
+   "colour": "#101010",
+   "section": "SC_NUCLEAR",
+   "visible": true,
+   "desc": "Displaces other elements."
+  },
+  {
+   "id": "DEFAULT_PT_WATR",
+   "name": "WATR",
+   "colour": "#2030d0",
+   "section": "SC_LIQUID",
+   "visible": true,
+   "desc": "Water. Conducts electricity, freezes, and extinguishes fires."
+  },
+  {
+   "id": "DEFAULT_PT_WAX",
+   "name": "WAX",
+   "colour": "#f0f0bb",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Flammable, melts at moderately high temperatures."
+  },
+  {
+   "id": "DEFAULT_PT_WHOL",
+   "name": "VENT",
+   "colour": "#efefef",
+   "section": "SC_SPECIAL",
+   "visible": true,
+   "desc": "Air vent, creates pressure and pushes other particles away."
+  },
+  {
+   "id": "DEFAULT_PT_WIFI",
+   "name": "WIFI",
+   "colour": "#40a060",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "Wireless transmitter, transfers spark to any other wifi on the same temperature channel."
+  },
+  {
+   "id": "DEFAULT_PT_WIRE",
+   "name": "WWLD",
+   "colour": "#ffcc00",
+   "section": "SC_ELEC",
+   "visible": true,
+   "desc": "WireWorld wires, conducts based on a set of GOL-like rules."
+  },
+  {
+   "id": "DEFAULT_PT_WOOD",
+   "name": "WOOD",
+   "colour": "#c0a040",
+   "section": "SC_SOLIDS",
+   "visible": true,
+   "desc": "Wood, flammable."
+  },
+  {
+   "id": "DEFAULT_PT_WTRV",
+   "name": "WTRV",
+   "colour": "#a0a0ff",
+   "section": "SC_GAS",
+   "visible": true,
+   "desc": "Steam. Produced from hot water."
+  },
+  {
+   "id": "DEFAULT_PT_YEST",
+   "name": "YEST",
+   "colour": "#eee0c0",
+   "section": "SC_POWDERS",
+   "visible": true,
+   "desc": "Yeast, grows when warm (~37C)."
+  }
+ ],
+ "walls": [
+  {
+   "id": "DEFAULT_WL_ERASE",
+   "name": "ERASE",
+   "colour": "#808080",
+   "desc": "Erases walls."
+  },
+  {
+   "id": "DEFAULT_WL_CNDTW",
+   "name": "CONDUCTIVE WALL",
+   "colour": "#c0c0c0",
+   "desc": "Blocks everything. Conductive."
+  },
+  {
+   "id": "DEFAULT_WL_EWALL",
+   "name": "EWALL",
+   "colour": "#808080",
+   "desc": "E-Wall. Becomes transparent when electricity is connected."
+  },
+  {
+   "id": "DEFAULT_WL_DTECT",
+   "name": "DETECTOR",
+   "colour": "#ff8080",
+   "desc": "Detector. Generates electricity when a particle is inside."
+  },
+  {
+   "id": "DEFAULT_WL_STRM",
+   "name": "STREAMLINE",
+   "colour": "#808080",
+   "desc": "Streamline. Creates a line that follows air movement."
+  },
+  {
+   "id": "DEFAULT_WL_FAN",
+   "name": "FAN",
+   "colour": "#8080ff",
+   "desc": "Fan. Accelerates air. Use the line tool to set direction and strength."
+  },
+  {
+   "id": "DEFAULT_WL_LIQD",
+   "name": "LIQUID WALL",
+   "colour": "#c0c0c0",
+   "desc": "Allows liquids, blocks all other particles. Conductive."
+  },
+  {
+   "id": "DEFAULT_WL_ABSRB",
+   "name": "ABSORB WALL",
+   "colour": "#808080",
+   "desc": "Absorbs particles but lets air currents through."
+  },
+  {
+   "id": "DEFAULT_WL_WALL",
+   "name": "WALL",
+   "colour": "#808080",
+   "desc": "Basic wall, blocks everything."
+  },
+  {
+   "id": "DEFAULT_WL_AIR",
+   "name": "AIRONLY WALL",
+   "colour": "#3c3c3c",
+   "desc": "Allows air, but blocks all particles."
+  },
+  {
+   "id": "DEFAULT_WL_POWDR",
+   "name": "POWDER WALL",
+   "colour": "#575757",
+   "desc": "Allows powders, blocks all other particles."
+  },
+  {
+   "id": "DEFAULT_WL_CNDTR",
+   "name": "CONDUCTOR",
+   "colour": "#ffff22",
+   "desc": "Conductor. Allows all particles to pass through and conducts electricity."
+  },
+  {
+   "id": "DEFAULT_WL_EHOLE",
+   "name": "EHOLE",
+   "colour": "#242424",
+   "desc": "E-Hole. absorbs particles, releases them when powered."
+  },
+  {
+   "id": "DEFAULT_WL_GAS",
+   "name": "GAS WALL",
+   "colour": "#579777",
+   "desc": "Allows gases, blocks all other particles."
+  },
+  {
+   "id": "DEFAULT_WL_GRVTY",
+   "name": "GRAVITY WALL",
+   "colour": "#ffee00",
+   "desc": "Gravity wall. Newtonian Gravity has no effect inside a box drawn with this."
+  },
+  {
+   "id": "DEFAULT_WL_ENRGY",
+   "name": "ENERGY WALL",
+   "colour": "#ffaa00",
+   "desc": "Allows energy particles, blocks all other particles."
+  },
+  {
+   "id": "DEFAULT_WL_NOAIR",
+   "name": "AIRBLOCK WALL",
+   "colour": "#dcdcdc",
+   "desc": "Allows all particles, but blocks air."
+  },
+  {
+   "id": "DEFAULT_WL_ERASEA",
+   "name": "ERASEALL",
+   "colour": "#808080",
+   "desc": "Erases walls, particles, and signs."
+  },
+  {
+   "id": "DEFAULT_WL_STASIS",
+   "name": "STASIS WALL",
+   "colour": "#800080",
+   "desc": "Freezes particles inside the wall in place until powered."
+  }
+ ],
+ "tools": [
+  {
+   "id": "DEFAULT_TOOL_AIR",
+   "name": "AIR",
+   "colour": "#ffffff",
+   "desc": "Air, creates airflow and pressure."
+  },
+  {
+   "id": "DEFAULT_TOOL_AMBM",
+   "name": "AMBM",
+   "colour": "#00ddff",
+   "desc": "Decreases ambient air temperature."
+  },
+  {
+   "id": "DEFAULT_TOOL_AMBP",
+   "name": "AMBP",
+   "colour": "#ffdd00",
+   "desc": "Increases ambient air temperature."
+  },
+  {
+   "id": "DEFAULT_TOOL_COOL",
+   "name": "COOL",
+   "colour": "#00ddff",
+   "desc": "Cools the targeted element."
+  },
+  {
+   "id": "DEFAULT_TOOL_CYCL",
+   "name": "CYCL",
+   "colour": "#132f5b",
+   "desc": "Cyclone, produces swirling air currents"
+  },
+  {
+   "id": "DEFAULT_TOOL_HEAT",
+   "name": "HEAT",
+   "colour": "#ffdd00",
+   "desc": "Heats the targeted element."
+  },
+  {
+   "id": "DEFAULT_TOOL_MIX",
+   "name": "MIX",
+   "colour": "#ffd090",
+   "desc": "Mixes particles."
+  },
+  {
+   "id": "DEFAULT_TOOL_NGRV",
+   "name": "NGRV",
+   "colour": "#aaccff",
+   "desc": "Creates a short-lasting negative gravity well."
+  },
+  {
+   "id": "DEFAULT_TOOL_PGRV",
+   "name": "PGRV",
+   "colour": "#ccccff",
+   "desc": "Creates a short-lasting gravity well."
+  },
+  {
+   "id": "DEFAULT_TOOL_VAC",
+   "name": "VAC",
+   "colour": "#303030",
+   "desc": "Vacuum, reduces air pressure."
+  },
+  {
+   "id": "DEFAULT_TOOL_WIND",
+   "name": "WIND",
+   "colour": "#404040",
+   "desc": "Creates air movement."
+  }
+ ]
+}
