@@ -241,7 +241,7 @@ if host_platform == 'emscripten'
 		'-s', 'ALLOW_MEMORY_GROWTH=1',
 		'-s', 'FORCE_FILESYSTEM=1',
 		'-s', 'EXIT_RUNTIME=0',
-		'-s', 'EXPORTED_RUNTIME_METHODS=ccall,cwrap',
+		'-s', 'EXPORTED_RUNTIME_METHODS=ccall,cwrap,FS', # FS: host page writes autorun.lua / .cps into the IDBFS data dir
 		'-s', 'FS_DEBUG',
 		'-s', 'MODULARIZE',
 		'-s', 'EXPORT_NAME=create_' + app_exe_jssafe,
