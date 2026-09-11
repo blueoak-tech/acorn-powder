@@ -5,6 +5,9 @@ on:
     branches: [acorn/main]
     tags: ['acorn-v*']
   workflow_dispatch:
+# the release step needs to write; the default GITHUB_TOKEN is read-only
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-22.04
