@@ -243,6 +243,11 @@ namespace LuaHttp
 	void Tick(lua_State *L);
 }
 
+namespace LuaAcorn
+{
+	void Open(lua_State *L);
+}
+
 namespace LuaBz2
 {
 	void Open(lua_State *L);

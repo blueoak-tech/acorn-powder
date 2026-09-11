@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Powder shell harness (parent page)</title>
+<style>
+  body { margin: 0; font: 13px system-ui; display: grid; grid-template-columns: 1fr 380px; height: 100vh; }
+  iframe { width: 100%; height: 100%; border: 0; background: #000; }
+  aside { padding: 8px; overflow: auto; border-left: 1px solid #ccc; }
+  button { margin: 2px; }
+  pre { white-space: pre-wrap; font-size: 11px; background: #f4f4f4; padding: 6px; max-height: 40vh; overflow: auto; }
+  img { max-width: 100%; border: 1px solid #999; }
+</style>
+</head>
+<body>
+<iframe id="frame" allow="fullscreen"></iframe>
+<aside>
+  <div><b>Harness</b> — origin <code id="origin"></code> → frame <code id="frameOrigin"></code></div>
+  <div>
+    <button data-cmd="init">init + scenario</button>
+    <button data-cmd="state">get-state</button>
+    <button data-cmd="lua">run-lua (water box)</button>
+    <button data-cmd="getsave">get-save</button>
+    <button data-cmd="loadsave">load-save (last)</button>
+    <button data-cmd="snap">snapshot</button>
+    <button data-cmd="pause">pause</button>
+    <button data-cmd="resume">resume</button>
+  </div>
+  <img id="snap" alt="">
+  <pre id="log"></pre>
+</aside>
+<script>
+  const FRAME_ORIGIN = new URLSearchParams(location.search).get('frame') || 'http://127.0.0.1:8766';
+  const frame = document.getElementById('frame');
+  const log = (...a) => { const el = document.getElementById('log'); el.textContent = a.map(x => typeof x === 'string' ? x : JSON.stringify(x)).join(' ') + '\n' + el.textContent; };
+  document.getElementById('origin').textContent = location.origin;
+  document.getElementById('frameOrigin').textContent = FRAME_ORIGIN;
+  frame.src = FRAME_ORIGIN + '/';
+  window.__events = [];
+  let lastSave = null, n = 0;
+  const send = (msg) => { msg.id = 'h' + (++n); frame.contentWindow.postMessage(msg, FRAME_ORIGIN); log('→', msg.type, msg.id); return msg.id; };
+  window.addEventListener('message', (ev) => {
+    if (ev.origin !== FRAME_ORIGIN) return;
+    const m = ev.data; window.__events.push(m);
+    if (m.type === 'acorn:result' && m.ok && m.data && m.data.cps) { lastSave = m.data.cps; log('←', m.type, m.id, 'cps bytes=' + m.data.bytes); return; }
+    if (m.type === 'acorn:result' && m.ok && m.data && m.data.dataUrl) { document.getElementById('snap').src = m.data.dataUrl; log('←', m.type, m.id, m.data.width + 'x' + m.data.height); return; }
+    log('←', m);
+  });
+  const SCENARIO_LUA = [
+    "sim.edgeMode(1)",
+    "sim.createBox(20, 200, 120, 240, elem.DEFAULT_PT_STNE)",
+    "local frames = 0",
+    "event.register(event.tick, function() frames = frames + 1; if frames % 60 == 0 then acorn.emit('{\"frames\":' .. frames .. ',\"parts\":' .. sim.partCount() .. '}') end end)",
+  ].join('\n');
+  const cmds = {
+    init: () => send({ type: 'acorn:init', v: 1, scenario: { lua: SCENARIO_LUA } }),
+    state: () => send({ type: 'acorn:get-state' }),
+    lua: () => send({ type: 'acorn:run-lua', code: 'sim.createBox(200, 40, 500, 70, elem.DEFAULT_PT_WATR)' }),
+    getsave: () => send({ type: 'acorn:get-save' }),
+    loadsave: () => lastSave ? send({ type: 'acorn:load-save', cps: lastSave }) : log('no save yet'),
+    snap: () => send({ type: 'acorn:snapshot', maxWidth: 320 }),
+    pause: () => send({ type: 'acorn:pause', paused: true }),
+    resume: () => send({ type: 'acorn:pause', paused: false }),
+  };
+  window.__send = send; window.__cmds = cmds;
+  document.querySelectorAll('button[data-cmd]').forEach(b => b.onclick = () => cmds[b.dataset.cmd]());
+</script>
+</body>
+</html>

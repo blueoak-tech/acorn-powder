@@ -99,6 +99,9 @@ public:
 
 	bool HistoryRestore();
 	void HistorySnapshot();
+	// Acorn bridge (src/acorn/AcornBridge.cpp): whole-sim save + live particle count
+	std::unique_ptr<GameSave> AcornGetSave();
+	int AcornPartCount();
 	bool HistoryForward();
 
 	void AdjustGridSize(int direction);

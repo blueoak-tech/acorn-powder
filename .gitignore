@@ -93,3 +93,10 @@ screenshot_*
 /font/
 compile_commands.json
 ignore/
+
+# Acorn web build outputs
+/build-web/
+/acorn/dist/
+/acorn/powder-web.tar.gz
+/acorn/shell/build/
+/acorn/shell/node_modules/

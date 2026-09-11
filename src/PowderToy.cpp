@@ -1,3 +1,6 @@
+#ifdef __EMSCRIPTEN__
+# include "acorn/AcornBridge.h"
+#endif
 #include "PowderToySDL.h"
 #include "Format.h"
 #include "X86KillDenormals.h"
@@ -501,6 +504,9 @@ int Main(int argc, char *argv[])
 	auto *gameController = explicitSingletons->gameController.get();
 	engine.ShowWindow(gameController->GetView());
 	gameController->InitCommandInterface();
+#ifdef __EMSCRIPTEN__
+	AcornBridge::MarkReady();
+#endif
 
 	auto openArg = arguments["open"];
 	if (openArg.has_value())

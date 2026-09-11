@@ -24,6 +24,9 @@ luaconsole_files = files(
 	'LuaTools.cpp',
 	'LuaWindow.cpp',
 )
+if host_platform == 'emscripten'
+	luaconsole_files += files('LuaAcorn.cpp')
+endif
 if lua_variant != 'luajit'
 	luaconsole_files += files(
 		'LuaBit.cpp',

@@ -154,6 +154,9 @@ LuaScriptInterface::LuaScriptInterface(GameController *newGameController, GameMo
 		luaopen_bit(L);
 		lua_pop(L, 1);
 	}
+#ifdef __EMSCRIPTEN__
+	LuaAcorn::Open(L);
+#endif
 	LuaBz2::Open(L);
 	LuaElements::Open(L);
 	LuaEvent::Open(L);

@@ -1236,6 +1236,21 @@ void GameController::OpenSearch(String searchText)
 	ui::Engine::Ref().ShowWindow(search->GetView());
 }
 
+std::unique_ptr<GameSave> GameController::AcornGetSave()
+{
+	auto gameSave = gameModel->GetSimulation()->Save(gameModel->GetIncludePressure() != gameView->ShiftBehaviour(), RES.OriginRect());
+	if (gameSave)
+	{
+		gameSave->paused = gameModel->GetPaused();
+	}
+	return gameSave;
+}
+
+int GameController::AcornPartCount()
+{
+	return gameModel->GetSimulation()->NUM_PARTS;
+}
+
 void GameController::OpenLocalSaveWindow(bool asCurrent)
 {
 	Simulation * sim = gameModel->GetSimulation();

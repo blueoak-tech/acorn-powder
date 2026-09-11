@@ -1,0 +1,7 @@
+{
+  "name": "acorn-powder-shell",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "scripts": { "build": "tsc -p ." },
+  "devDependencies": { "typescript": "^5.9.3" }
+}

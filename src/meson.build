@@ -184,6 +184,7 @@ if host_platform == 'linux'
 	font_files += files('WindowIcon.cpp')
 endif
 
+subdir('acorn')
 subdir('bzip2')
 subdir('client')
 subdir('common')

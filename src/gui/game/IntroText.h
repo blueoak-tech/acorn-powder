@@ -1,5 +1,6 @@
 #pragma once
 #include "Config.h"
+#include "acorn/AcornConfig.h"
 #include "SimulationConfig.h"
 #include "common/String.h"
 
@@ -42,7 +43,7 @@ inline ByteString VersionInfo()
 inline ByteString IntroText()
 {
 	ByteStringBuilder sb;
-	sb << "\bl\bU" << APPNAME << "\bU - Version " << DISPLAY_VERSION[0] << "." << DISPLAY_VERSION[1] << " - https://powdertoy.co.uk, irc.libera.chat #powder, https://tpt.io/discord\n"
+	sb << "\bl\bU" << APPNAME << "\bU - Version " << DISPLAY_VERSION[0] << "." << DISPLAY_VERSION[1] << " - Acorn build of The Powder Toy (GPL-3.0), source: " << ACORN_SOURCE_URL << "\n"
 	      "\n"
 	      "\n"
 	      "\bgPress \bo'F1'\bg to show or hide this text.\n"
@@ -74,7 +75,7 @@ inline ByteString IntroText()
 	}
 	else
 	{
-		sb << "\bgTo use online features such as saving, you need to register at: \br" << SERVER << "/Register.html\n";
+		sb << "\bgThis window is driven by the Acorn page around it: scenarios, saving and progress live there.\n";
 	}
 	sb << "\n\bt" << VersionInfo();
 	return sb.Build();

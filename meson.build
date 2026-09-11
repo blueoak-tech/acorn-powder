@@ -241,7 +241,8 @@ if host_platform == 'emscripten'
 		'-s', 'ALLOW_MEMORY_GROWTH=1',
 		'-s', 'FORCE_FILESYSTEM=1',
 		'-s', 'EXIT_RUNTIME=0',
-		'-s', 'EXPORTED_RUNTIME_METHODS=ccall,cwrap,FS', # FS: host page writes autorun.lua / .cps into the IDBFS data dir
+		'-s', 'EXPORTED_RUNTIME_METHODS=ccall,cwrap,FS,HEAPU8,UTF8ToString', # used by acorn/shell/shell.ts
+		'-s', 'EXPORTED_FUNCTIONS=_main,_malloc,_free', # acorn_* exports are EMSCRIPTEN_KEEPALIVE
 		'-s', 'FS_DEBUG',
 		'-s', 'MODULARIZE',
 		'-s', 'EXPORT_NAME=create_' + app_exe_jssafe,
